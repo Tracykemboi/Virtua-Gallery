@@ -52,7 +52,7 @@ In the wake of global changes that have limited physical art exhibitions, there'
 ### Frontend Setup
 The frontend has been hosted in vercel.
 
-..
+https://virtua-gallery.vercel.app/
 
 ### Backend Setup
 
