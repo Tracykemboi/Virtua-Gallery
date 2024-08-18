@@ -49,6 +49,11 @@ In the wake of global changes that have limited physical art exhibitions, there'
    ```
 2. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Frontend Setup
+The frontend has been hosted in vercel.
+
+
+
 ### Backend Setup
 
 The application uses a JSON server for the backend. You have two options:
