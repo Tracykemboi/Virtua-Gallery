@@ -156,14 +156,14 @@
       "id": "1",
       "title": "Starting Your Art Business",
       "type": "article",
-      "contentUrl": "https://example.com/art-business-101",
+      "contentUrl": "https://www.josielewis.com/the-blog/if-i-had-to-start-from-zero-with-my-art-business",
       "description": "A guide to starting and running a successful art business."
     },
     {
       "id": "2",
       "title": "Introduction to WebGL for Artists",
       "type": "tutorial",
-      "contentUrl": "https://example.com/webgl-tutorial",
+      "contentUrl": "https://www.cssdesignawards.com/website-gallery?feature=webgl",
       "description": "A beginner's guide to using WebGL for creating interactive art."
     }
   ]

@@ -1,7 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// Login component (you can also put this in a separate file)
+function Login({ onLogin }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username === 'admin' && password === 'password') {
+      localStorage.setItem('isLoggedIn', 'true');
+      onLogin();
+    } else {
+      setError('Invalid credentials');
+    }
+  };
+
+  return (
+    <div className="login-form">
+      <h2>Admin Login</h2>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+}
+
+// Main AdminDashboard component
 function AdminDashboard() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [artists, setArtists] = useState([]);
   const [exhibitions, setExhibitions] = useState([]);
   const [newArtist, setNewArtist] = useState({
@@ -17,6 +60,15 @@ function AdminDashboard() {
   });
 
   useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+
+    if (loggedIn) {
+      fetchData();
+    }
+  }, []);
+
+  const fetchData = () => {
     Promise.all([
       axios.get('http://localhost:3001/artists'),
       axios.get('http://localhost:3001/exhibitions')
@@ -24,7 +76,17 @@ function AdminDashboard() {
       setArtists(artistsRes.data);
       setExhibitions(exhibitionsRes.data);
     }).catch(error => console.error('Error fetching data:', error));
-  }, []);
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    fetchData();
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    setIsLoggedIn(false);
+  };
 
   const handleArtistChange = (e) => {
     setNewArtist({ ...newArtist, [e.target.name]: e.target.value });
@@ -93,11 +155,14 @@ function AdminDashboard() {
     }));
   };
 
+  if (!isLoggedIn) {
+    return <Login onLogin={handleLogin} />;
+  }
+
   return (
     <div className="admin-dashboard">
       <h1>Admin Dashboard</h1>
-      
-      
+      <button onClick={handleLogout}>Logout</button>
       
       <form onSubmit={handleAddArtist}>
         <h2>Add New Artist</h2>
@@ -105,11 +170,9 @@ function AdminDashboard() {
         <input name="bio" value={newArtist.bio} onChange={handleArtistChange} placeholder="Bio" required />
         <input name="genre" value={newArtist.genre} onChange={handleArtistChange} placeholder="Genre" required />
         <textarea name="statement" value={newArtist.statement} onChange={handleArtistChange} placeholder="Artist Statement" required />
-        {/* <input name="processVideoUrl" value={newArtist.processVideoUrl} onChange={handleArtistChange} placeholder="Process Video URL" required /> */}
         <button type="submit">Add Artist</button>
       </form>
 
-      
       <form onSubmit={handleAddArtwork}>
         <h2>Add New Artwork</h2>
         <select value={selectedArtist} onChange={(e) => setSelectedArtist(e.target.value)} required>
