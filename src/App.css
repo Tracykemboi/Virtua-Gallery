@@ -1,4 +1,3 @@
-/* 
 
 body {
   font-family: 'Arial', sans-serif;
@@ -8,163 +7,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.App {
-  
-  margin: 0 auto;
-
-  background-image:url('https://i.pinimg.com/564x/98/74/05/987405b3f3f076945ca651eed4782329.jpg') ;
-  background-size: cover; 
-
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 30px 0;
-  display: flex;
-  justify-content: space-around;
-
-}
-
-.gallery {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  color: #004080;
-}
-
-.filter {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#genre-select {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.artwork-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.artwork-tile {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  padding-bottom: 10px;
-}
-
-.artwork-tile:hover {
-  transform: translateY(-5px);
-}
-
-.artwork-tile img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.artwork-tile h3 {
-  padding: 10px 10px 5px;
-  margin: 0;
-  font-size: 14px;
-  text-align: center;
-  color: #004080;
-}
-
-.artwork-tile p {
-  margin: 0 0 10px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-}
-
-.artwork-tile button {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.for-sale {
-  background-color: #4CAF50;
-  color: white;
-}
-
-button.sold {
-  background-color: #f44336;
-  color: white;
-}
-
-button.for-sale:hover {
-  background-color: #45a049;
-}
-
-button.sold:hover {
-  background-color: #da190b;
-}
-
-@media (max-width: 1024px) {
-  .artwork-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .artwork-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .artwork-grid {
-    grid-template-columns: 1fr;
-  }
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input, textarea, select {
-  padding: 10px;
-  border: 1px solid #b3d9ff;
-  border-radius: 4px;
-  font-size: 16px;
-}
-/* .artist, {
-  border: 1px solid #b3d9ff;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease;
-} */ */
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
-}
-
 .App {
   margin: 0 auto;
   background-image: url('https://i.pinimg.com/564x/6b/5d/ad/6b5dad5871dd432b184aabeded212e92.jpg');
@@ -197,7 +39,7 @@ display: grid;
 grid-template-columns: repeat(auto-fill, minmax(250px, 200px));
 gap: 20px;
 padding: 20px;
-/* background-image: url('https://i.pinimg.com/564x/ee/d5/96/eed596b0a34c4e3501a6e7ed06f40d1d.jpg'); */
+
 }
 .gallery {
   max-width: 1200px;
@@ -263,7 +105,7 @@ h1 {
 /* Button Styles */
 button {
   display: block;
-  /* width: 80%; */
+ 
   margin: 10px auto;
   padding: 10px;
   border: none;
