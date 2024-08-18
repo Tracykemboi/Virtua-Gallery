@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// Login component (you can also put this in a separate file)
+// Login component
+// This component handles user authentication for the admin dashboard
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Simple authentication (replace with actual auth logic in production)
     if (username === 'admin' && password === 'password') {
       localStorage.setItem('isLoggedIn', 'true');
       onLogin();
@@ -44,6 +47,7 @@ function Login({ onLogin }) {
 
 // Main AdminDashboard component
 function AdminDashboard() {
+  // State variables
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [artists, setArtists] = useState([]);
   const [exhibitions, setExhibitions] = useState([]);
@@ -59,6 +63,7 @@ function AdminDashboard() {
     title: '', description: '', startDate: '', endDate: '', artworkIds: []
   });
 
+  // Effect hook to check login status and fetch data on component mount
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(loggedIn);
@@ -68,6 +73,7 @@ function AdminDashboard() {
     }
   }, []);
 
+  // Function to fetch artists and exhibitions data
   const fetchData = () => {
     Promise.all([
       axios.get('http://localhost:3001/artists'),
@@ -78,16 +84,19 @@ function AdminDashboard() {
     }).catch(error => console.error('Error fetching data:', error));
   };
 
+  // Login handler
   const handleLogin = () => {
     setIsLoggedIn(true);
     fetchData();
   };
 
+  // Logout handler
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
   };
 
+  // Event handlers for form inputs
   const handleArtistChange = (e) => {
     setNewArtist({ ...newArtist, [e.target.name]: e.target.value });
   };
@@ -100,6 +109,7 @@ function AdminDashboard() {
     setNewExhibition({ ...newExhibition, [e.target.name]: e.target.value });
   };
 
+  // Function to add a new artist
   const handleAddArtist = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/artists', newArtist)
@@ -110,6 +120,7 @@ function AdminDashboard() {
       .catch(error => console.error('Error adding artist:', error));
   };
 
+  // Function to add a new artwork to an artist's portfolio
   const handleAddArtwork = (e) => {
     e.preventDefault();
     const artist = artists.find(a => a.id === parseInt(selectedArtist));
@@ -128,6 +139,7 @@ function AdminDashboard() {
     }
   };
 
+  // Function to add a new exhibition
   const handleAddExhibition = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/exhibitions', newExhibition)
@@ -138,6 +150,7 @@ function AdminDashboard() {
       .catch(error => console.error('Error adding exhibition:', error));
   };
 
+  // Function to remove an exhibition
   const handleRemoveExhibition = (id) => {
     axios.delete(`http://localhost:3001/exhibitions/${id}`)
       .then(() => {
@@ -146,6 +159,7 @@ function AdminDashboard() {
       .catch(error => console.error('Error removing exhibition:', error));
   };
 
+  // Function to handle artwork selection for exhibitions
   const handleArtworkSelection = (artworkId) => {
     setNewExhibition(prev => ({
       ...prev,
@@ -155,15 +169,18 @@ function AdminDashboard() {
     }));
   };
 
+  // Render login form if not logged in
   if (!isLoggedIn) {
     return <Login onLogin={handleLogin} />;
   }
 
+  // Main render of the AdminDashboard
   return (
     <div className="admin-dashboard">
       <h1>Admin Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
       
+      {/* Form to add a new artist */}
       <form onSubmit={handleAddArtist}>
         <h2>Add New Artist</h2>
         <input name="name" value={newArtist.name} onChange={handleArtistChange} placeholder="Name" required />
@@ -173,6 +190,7 @@ function AdminDashboard() {
         <button type="submit">Add Artist</button>
       </form>
 
+      {/* Form to add a new artwork */}
       <form onSubmit={handleAddArtwork}>
         <h2>Add New Artwork</h2>
         <select value={selectedArtist} onChange={(e) => setSelectedArtist(e.target.value)} required>
@@ -188,6 +206,7 @@ function AdminDashboard() {
         <button type="submit">Add Artwork</button>
       </form>
 
+      {/* Form to create a new exhibition */}
       <h2>Create New Exhibition</h2>
       <form onSubmit={handleAddExhibition}>
         <input name="title" value={newExhibition.title} onChange={handleExhibitionChange} placeholder="Exhibition Title" required />
@@ -196,6 +215,7 @@ function AdminDashboard() {
         <input name="endDate" type="date" value={newExhibition.endDate} onChange={handleExhibitionChange} required />
         
         <h3>Select Artworks for Exhibition</h3>
+        {/* Nested mapping to display all artworks grouped by artist */}
         {artists.map(artist => (
           <div key={artist.id}>
             <h4>{artist.name}</h4>
@@ -216,6 +236,7 @@ function AdminDashboard() {
         <button type="submit">Create Exhibition</button>
       </form>
 
+      {/* Display current exhibitions */}
       <h2>Current Exhibitions</h2>
       {exhibitions.map(exhibition => (
         <div key={exhibition.id}>
