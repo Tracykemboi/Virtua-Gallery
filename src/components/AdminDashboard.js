@@ -11,7 +11,7 @@ function Login({ onLogin }) {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simple authentication (replace with actual auth logic in production)
+    // Simple authentication (// I know this isn't secure, but it's just for demonstration. We'd use proper authentication in a real app.)
     if (username === 'admin' && password === 'password') {
       localStorage.setItem('isLoggedIn', 'true');
       onLogin();
@@ -19,7 +19,7 @@ function Login({ onLogin }) {
       setError('Invalid credentials');
     }
   };
-
+  // login form just username and password fields with a submit button.
   return (
     <div className="login-form">
       <h2>Admin Login</h2>
@@ -63,7 +63,7 @@ function AdminDashboard() {
     title: '', description: '', startDate: '', endDate: '', artworkIds: []
   });
 
-  // Effect hook to check login status and fetch data on component mount
+  // Effect hook to check login status and fetch data when the component mounts
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(loggedIn);
@@ -215,7 +215,7 @@ function AdminDashboard() {
         <input name="endDate" type="date" value={newExhibition.endDate} onChange={handleExhibitionChange} required />
         
         <h3>Select Artworks for Exhibition</h3>
-        {/* Nested mapping to display all artworks grouped by artist */}
+        {/* mapping to display all artworks grouped by artist */}
         {artists.map(artist => (
           <div key={artist.id}>
             <h4>{artist.name}</h4>

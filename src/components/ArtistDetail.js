@@ -3,15 +3,18 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function ArtistDetail() {
+  // Store the artist data and get the artist id from the URL
   const [artist, setArtist] = useState(null);
   const { id } = useParams();
 
+  // Fetch the artist data when the component loads
   useEffect(() => {
     axios.get(`http://localhost:3001/artists/${id}`)
       .then(response => setArtist(response.data))
       .catch(error => console.error('Error fetching artist:', error));
   }, [id]);
 
+  // Toggle the purchased status of an artwork
   const handlePurchaseToggle = (artworkId) => {
     const updatedArtist = {
       ...artist,
@@ -20,13 +23,16 @@ function ArtistDetail() {
       )
     };
 
+    // Update the artist data on the server and in our state
     axios.put(`http://localhost:3001/artists/${id}`, updatedArtist)
       .then(response => setArtist(response.data))
       .catch(error => console.error('Error updating artwork:', error));
   };
 
+  // Show a loading message while we're fetching the artist data
   if (!artist) return <div>Loading...</div>;
 
+  // Render the artist details and their portfolio
   return (
     <div className="artist-detail">
       <h1>{artist.name}</h1>

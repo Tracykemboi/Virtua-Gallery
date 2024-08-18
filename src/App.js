@@ -9,6 +9,7 @@ import Resources from './components/Resources';
 import AdminDashboard from './components/AdminDashboard';
 import './App.css';
 
+// Navigation items array. Makes it easy to add or remove pages later.
 const navItems = [
   { path: '/', name: 'Gallery' },
   { path: '/artists', name: 'Artists' },
@@ -17,6 +18,7 @@ const navItems = [
   { path: '/admin', name: 'Admin Dashboard' },
 ];
 
+// Routes array. Gives us a clear overview of our app structure.
 const routes = [
   { path: '/', Component: Gallery },
   { path: '/artists', Component: Artists },
@@ -27,17 +29,23 @@ const routes = [
   { path: '/admin', Component: AdminDashboard },
 ];
 
+// Main App component. Sets up the overall structure and routing.
 function App() {
   return (
     <Router>
       <div className="App">
+        {/* Navigation bar */}
         <nav>
           <ul>
             {navItems.map(({ path, name }) => (
-              <li key={path}><Link to={path}>{name}</Link></li>
+              <li key={path}>
+                <Link to={path}>{name}</Link>
+              </li>
             ))}
           </ul>
         </nav>
+
+        {/* This is where the different pages will be rendered */}
         <Routes>
           {routes.map(({ path, Component }) => (
             <Route key={path} path={path} element={<Component />} />
