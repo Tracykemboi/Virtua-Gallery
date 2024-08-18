@@ -52,7 +52,7 @@ In the wake of global changes that have limited physical art exhibitions, there'
 ### Frontend Setup
 The frontend has been hosted in vercel.
 
-
+..
 
 ### Backend Setup
 
