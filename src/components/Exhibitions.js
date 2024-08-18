@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Exhibitions() {
+ // Store our exhibitions and artists data
   const [exhibitions, setExhibitions] = useState([]);
   const [artists, setArtists] = useState([]);
 //get both the exhibitions and the artists data 
@@ -15,7 +16,7 @@ function Exhibitions() {
       setArtists(artistsRes.data);
     }).catch(error => console.error('Error fetching data:', error));
   }, []);
-
+ // function to get artwork details including artist name
   const getArtworkDetails = (artworkId) => {
     // Flatten the portfolios into a single array and find the artwork
     const foundArtwork = artists
@@ -29,7 +30,7 @@ function Exhibitions() {
     } : null;
   };
   
-
+// Render the exhibitions list
   return (
     <div className="exhibitions">
       <h1>Virtual Exhibitions</h1>
