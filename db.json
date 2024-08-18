@@ -1,0 +1,170 @@
+{
+  "artists": [
+    {
+      "id": "1",
+      "name": "Anne Mwiti",
+      "bio": "Anne Mwiti is an accomplished artist living in Nairobi, Kenya and lecturing at the Department of Fine Art and Design, Kenyatta University.Anne's artworks are creations influenced by the contemporary world of pop culture, the African society she has grown in and spiritual expressions and intuitions from within her psyche. She started drawing at the age of five having scribbled a female figure like an Egyptian princess. Since then she has followed her dream to become an internationally recognised artists from Africa and emerged as the winner in the World Citizen Artist competition 2014 to be awarded the WCA award 2014 in London with the artwork.",
+      "genre": "Contemporary",
+      "statement": "My art explores the intersection of nature and urban development.",
+      "processVideoUrl": "https://example.com/faith-process-video",
+      "portfolio": [
+        {
+          "id": "1",
+          "title": "INVATION",
+          "imageUrl": "https://static.wixstatic.com/media/fc361c_63baa44e5ca543b38ef8c6d720131b60~mv2.png/v1/fill/w_607,h_342,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/file.png",
+          "description": "Oil on Canvas 43 x 75 cm",
+          "price": 700,
+          "purchased": false
+        },
+        {
+          "id": "2",
+          "title": "PEERS",
+          "imageUrl": "https://static.wixstatic.com/media/fc361c_91af4a1637f04abe8ad95ea00926db6c~mv2.png/v1/fill/w_607,h_607,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/file.png",
+          "description": "Oil on Canvas 92 x 92 cm",
+          "price": 1300,
+          "purchased": false
+        },
+        {
+          "id": "3",
+          "title": "MY BODY BETRAYS ME",
+          "imageUrl": "https://static.wixstatic.com/media/fc361c_84031dea12a143e4a1a5772f0cea17e3~mv2.png/v1/fill/w_607,h_428,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/file.png",
+          "description": "Oil on Canvas 198 x 142 cm",
+          "price": 2500,
+          "purchased": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Nega Yilma",
+      "bio": "Nega Yilma, the founder and proprietor of Nega Art, was born and raised In Ethiopia and has been a household name among those practicing art in the horn of Africa.Nega, the founder and proprietor of Negaart, was born and raised in Ethiopia. Nega has now become a household name among those practising art on the African continent. As an artist, he strives to take art-loving people on a journey with him as he creates his experimental art.He holds a Bachelor of Art Degree in Fine Arts, and has taken part in international art exhibitions in Ethiopia, Kenya, Uganda, South Africa, France, as well as throughout Europe and the USA.",
+      "genre": "Impressionist",
+      "statement": "It's as if you're taking them aboard your ship and sailing them to your world. People must be able to recognise themselves in your work",
+      "processVideoUrl": "https://example.com/neilman-process-video",
+      "portfolio": [
+        {
+          "id": "1",
+          "title": "OFFICIAL DATE",
+          "imageUrl": "https://static.wixstatic.com/media/897eb1_5c58015e5ab54ac5a25b18ec2df0c00f~mv2.jpg/v1/fill/w_589,h_679,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Nega%20Yilma_057.jpg",
+          "description": "Acrylic on Canvas 114 x 100 cm",
+          "price": 1200,
+          "purchased": false
+        },
+        {
+          "id": "2",
+          "title": "IN THEIR ANNIVERSARY",
+          "imageUrl": "https://static.wixstatic.com/media/897eb1_9a4a6632b974416fbb1f0f8aa0768b5c~mv2.jpg/v1/fill/w_607,h_625,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Nega%20Yilma_054.jpg",
+          "description": "Acrylic on Canvas 108 x 104 cm",
+          "price": 1400,
+          "purchased": false
+        },
+        {
+          "id": "3",
+          "title": "BOTH OF US",
+          "imageUrl": "https://static.wixstatic.com/media/897eb1_d0a604322bd24e2c84a28774b137cf57~mv2.jpg/v1/fill/w_547,h_679,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Nega%20Yilma_067.jpg",
+          "description": "Acrylic on Canvas 90 x 69 cm",
+          "price": 800,
+          "purchased": false
+        },
+        {
+          "id": "4",
+          "title": "AFRICAN HANDSOME IV",
+          "imageUrl": "https://static.wixstatic.com/media/897eb1_512c356512fe488f975699ffa9391c5e~mv2.jpg/v1/fill/w_607,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Nega%20Yilma_076.jpg",
+          "description": "Acrylic on Canvas 66 x 64 cm",
+          "price": 700,
+          "purchased": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Vincent Van Gogh",
+      "bio": "Throughout his life, and particularly in his final years, Van Gogh painted prolifically, using a signature vivid colour palette. While alive, he was never a famous man, often subsisting on the financial support of his brother Theo. After his death though, Van Gogh’s reputation grew.",
+      "genre": "Classical",
+      "statement": "Iwould rather die of passion than of boredom",
+      "processVideoUrl": "https://example.com/neilman-process-video",
+      "portfolio": [
+        {
+          "id": "1",
+          "title": "THE STARRY NIGHT (1889)",
+          "imageUrl": "https://static.euronews.com/articles/stories/07/49/39/34/1920x1200_cmsv2_20f22847-c8fe-53c6-9b3b-cb92febcaf82-7493934.jpg",
+          "description": "A vibrant depiction of a sunrise in abstract form.",
+          "price": 5000000,
+          "purchased": false
+        },
+        {
+          "id": "2",
+          "title": "THE POTATOE EATERS (1885)",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Van-willem-vincent-gogh-die-kartoffelesser-03850.jpg/1024px-Van-willem-vincent-gogh-die-kartoffelesser-03850.jpg",
+          "description": "Van Gogh saw the Potato Eaters as a showpiece, for which he deliberately chose a difficult composition to prove he was on his way to becoming a good figure painter. The painting had to depict the harsh reality of country life, so he gave the peasants coarse faces and bony, working hands. He wanted to show in this way that they ‘have tilled the earth themselves with these hands they are putting in the dish ... that they have thus honestly earned their food’.",
+          "price": 5000000,
+          "purchased": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Boniface Maina",
+      "bio": "Boniface Maina explores the inconsistencies and conflicts of human interaction within physical space.The distorted, often exaggerated figures that populate his compositions are intricately drawn with interwoven lines, taking on a muscular appearance. Seeming to embody the anatomical study of human form, these figures mirror the particularities of everyday existence, inviting the viewer to reflect on their own physical and social interactions and contortions. ",
+      "genre": "Contemporary",
+      "statement": "Waiting,Watching and wishing",
+      "processVideoUrl": "https://www.youtube.com/watch?v=AOHpWaBWqW4",
+      "portfolio": [
+        {
+          "id": "1",
+          "title": "THE POT CALLING THE KETTLE BLACK",
+          "imageUrl": "https://artlogic-res.cloudinary.com/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/artlogicstorage/circleartagency/images/view/b566ed7cd967b39d06f46e69d7618a5a/circleartgallery-boniface-maina-the-pot-calling-the-kettle-black-2023.jpg",
+          "description": "Oil on Canvas 30x30",
+          "price": 1000,
+          "purchased": false
+        },
+        {
+          "id": "2",
+          "title": "GESTURES",
+          "imageUrl": "https://artlogic-res.cloudinary.com/w_470,c_limit,f_auto,fl_lossy,q_auto/artlogicstorage/circleartagency/images/view/c6d8b86cd8dfcd082bf1c8d2395dbc26j/circleartgallery-boniface-maina-gestures-ii-2021.jpg",
+          "description": "Acrylic and Ink on Paper 32 x 41 cm 12 5/8 x 16 1/8 in",
+          "price": 850,
+          "purchased": false
+        }
+      ]
+    },
+    {
+      "id": "f4bb",
+      "name": "Tracy Kemboi",
+      "bio": "String artist based in kenya",
+      "genre": "String art",
+      "statement": "ahjjjdjas",
+      "processVideoUrl": "",
+      "portfolio": []
+    }
+  ],
+  "exhibitions": [
+    {
+      "id": "ccda",
+      "title": "The african savannah",
+      "description": "Shows the wonders of the african people and their wild environment",
+      "startDate": "2024-08-16",
+      "endDate": "2024-08-22",
+      "artworkIds": [
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "1",
+      "title": "Starting Your Art Business",
+      "type": "article",
+      "contentUrl": "https://example.com/art-business-101",
+      "description": "A guide to starting and running a successful art business."
+    },
+    {
+      "id": "2",
+      "title": "Introduction to WebGL for Artists",
+      "type": "tutorial",
+      "contentUrl": "https://example.com/webgl-tutorial",
+      "description": "A beginner's guide to using WebGL for creating interactive art."
+    }
+  ]
+}
